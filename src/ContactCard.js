@@ -14,10 +14,10 @@ export const ContactCard = (props) => {
     }
   return (
     <div className="contact-card">
-      <img src='http://via.placeholder.com/150' alt='profile-img'/>
+      <img src={props.avatarUrl} alt='profile-img'/>
       <div className='user-details'>
-        <p>{props.name}</p>
-        <p>{props.email}</p>
+        <p>Name: {props.name}{""} {props.last_name}</p>
+        <p>Email:{props.email}</p>
         <button onClick={()=>Showing()}>Show Age</button>
         {/*We could have used {()=>Showing(!showAge)}
             Which directly changes the value of the boolean to the opposite

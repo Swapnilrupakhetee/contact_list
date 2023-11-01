@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 
-export const ContactCard = () => {
+export const ContactCard = (props) => {
     const[showAge,setShowAge]=useState(false);
     const Showing =()=>{
-        if (showAge == false) {
+        if (showAge === false) {
             setShowAge(true);
 
         }
@@ -16,8 +16,8 @@ export const ContactCard = () => {
     <div className="contact-card">
       <img src='http://via.placeholder.com/150' alt='profile-img'/>
       <div className='user-details'>
-        <p>Name:Swapnil Deep</p>
-        <p>Email:Swapnil@gmail.com</p>
+        <p>{props.name}</p>
+        <p>{props.email}</p>
         <button onClick={()=>Showing()}>Show Age</button>
         {/*We could have used {()=>Showing(!showAge)}
             Which directly changes the value of the boolean to the opposite
@@ -29,7 +29,7 @@ export const ContactCard = () => {
          
         
         {
-            showAge && <p>age:42</p>
+            showAge && <p>{props.age}</p>
         }
 
       </div>
